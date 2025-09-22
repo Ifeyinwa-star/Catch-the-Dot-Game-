@@ -1,4 +1,4 @@
-# Catch the dot game Instruction
+# Catch the dot Game Instruction
 - Click the red dot as quickly as possible to score points.
 - You have 30 seconds to get the highest score.
 - The dot automatically moves to a new random position every 1.5 seconds.
