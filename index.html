@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catch the dot!</title>
+<style>
+    body {
+        text-align: center;
+        font-family: Arial, sans-serif;
+        min-height: 100vh;
+        margin: 0;
+        background:  linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+        position: relative;
+        overflow: hidden;
+    }
+/* Faint circles for playful effect*/
+body::before, body::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.15;
+    pointer-events: none;
+}
+body::before {
+    width: 400px;
+    height: 400px;
+    left: -100px;
+    top: 100px;
+    background: #43c6ac;
+}
+body::after {
+    width: 300px;
+    height: 300px;
+    right: -80px;
+    bottom: 80px;
+    background: #f8ffae;
+}
+#gameCanvas {
+        border: 2px solid #333;
+        background-color: #f9f9f9;
+        margin-top: 20px;
+        cursor: crosshair;
+        border-radius: 10px;
+}
+.game-info {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 40px;
+        margin-top: 10px;
+    }
+    #score {
+        font-size: 2.5em;
+        color: #2c3e50;
+        font-weight: bold;
+    }
+#timer {
+        font-size: 1.5em;
+        color: #e74c3c;
+        font-weight: bold;
+    }
+    #gameOver {
+        display: none;
+        margin-top: 20px;
+        font-size: 2em;
+        color: #e74c3c;
+ }
+#startButton {
+        margin-top: 20px;
+        padding: 15px 30px;
+        font-size: 1.8em;
+        background: linear-gradient(135deg, #27ae60, #2ecc71);
+        color: white;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        transition: all 0.3s ease;
+        font-weight: bold;
+}
+#startButton:hover {
+        background: linear-gradient(135deg, #229954, #27ae60);
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+}
+#restartButton {
+        display: none;
+        margin-top: 20px;
+        padding: 10px 20px;
+        font-size: 1.5em;
+        background: #3498db;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+}
+#restartButton:hover {
+        background: #2980b9;
+}
+</style>
+</head>
+<body>
+    <h1 style="font-size: 4em; margin-bottom: 0.2em; color: #272121;">Catch the Dot!</h1>
+    <p style="max-width: 500px; margin: 0 auto 20px auto; font-size: 1.3em; color: rgb(138, 40, 5);">
+        <em>Click the moving dot as quickly as possible! You have 30 seconds to score as many points as you can!</em>
+            </p>
+        <div class="game-info">
+            <div id="score">Score: 0</div>
+            <div id="timer">Time: 30s</div>
+        </div>
+
+<button id="startButton">Start Game</button>
+<canvas id="gameCanvas" width="600" height="400"></canvas>
+
+<button id="restartButton">Play Again</button>
+
+<script src="index.js"></script>
+</body>
+</html>
